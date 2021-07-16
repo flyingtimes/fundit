@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  odoo:
+    image: odoo:master
+    container_name: odoo
+    ports:
+      - "10013:8069"
+    tty: true
+    volumes:
+      - ./odoo-web-data:/var/lib/odoo
+      - ./odoo.conf:/etc/odoo/odoo.conf
+    environment:
+      - HOST=odoo-db
+      - USER=odoo
+      - PASSWORD=odoo
+    depends_on:
+      - odoo-db
+
+  odoo-db:
+    image: postgresql:13.1
+    container_name: odoo-db
+    volumes:
+      - ./odoo-db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - POSTGRES_DB=postgres
+    ports:
+      - "6434:5432"
+
+volumes:
+  odoo-web-data:
+  odoo-db:
