@@ -26,3 +26,13 @@ services:
       - POSTGRES_USER=odoo
       - POSTGRES_DB=postgres
 
+  odoo-pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "8080:80"
+    container_name: odoo-pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=Gmccgmcc1
+    depends_on:
+      - odoo-db
