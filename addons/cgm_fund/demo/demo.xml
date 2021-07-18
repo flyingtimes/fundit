@@ -1,4 +1,4 @@
-<odoo>
+<!-- <odoo>
     <data>
 
           <record id="object0" model="cgm_fund.cgm_fund">
@@ -27,4 +27,4 @@
           </record>
 
     </data>
-</odoo>
+</odoo> -->
