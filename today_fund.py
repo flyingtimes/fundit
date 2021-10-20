@@ -42,4 +42,3 @@ while (not cal.is_working_day(aday)):
 datestr = aday.strftime('%Y%m%d')
 with pd.ExcelWriter('/home/'+datestr+'.xlsx') as writer:  
     fund_em_open_fund_rank_df.to_excel(writer, sheet_name='open')
- #   fund_em_exchange_rank_df.to_excel(writer, sheet_name='inmarket')
