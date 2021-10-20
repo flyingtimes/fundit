@@ -42,3 +42,8 @@ while (not cal.is_working_day(aday)):
 datestr = aday.strftime('%Y%m%d')
 with pd.ExcelWriter('/home/'+datestr+'.xlsx') as writer:  
     fund_em_open_fund_rank_df.to_excel(writer, sheet_name='open')
+    
+#import akshare as ak
+#macro_china_market_margin_sz_df = ak.macro_china_market_margin_sz()
+#macro_china_market_margin_sz_df.to_excel('/home/rongzi.xlsx')
+#print(macro_china_market_margin_sz_df[-20:])
