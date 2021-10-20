@@ -45,5 +45,8 @@ with pd.ExcelWriter('/home/'+datestr+'.xlsx') as writer:
     
 #import akshare as ak
 #macro_china_market_margin_sz_df = ak.macro_china_market_margin_sz()
+#macro_china_market_margin_sz_df['365max']=macro_china_market_margin_sz_df['融资买入额'].rolling(365).max()
+#macro_china_market_margin_sz_df['365min']=macro_china_market_margin_sz_df['融资买入额'].rolling(365).min()
+#macro_china_market_margin_sz_df['365rate']=macro_china_market_margin_sz_df['融资买入额']/(macro_china_market_margin_sz_df['365max']-macro_china_market_margin_sz_df['365min'])
+#macro_china_market_margin_sz_df['365rate'].plot()
 #macro_china_market_margin_sz_df.to_excel('/home/rongzi.xlsx')
-#print(macro_china_market_margin_sz_df[-20:])
